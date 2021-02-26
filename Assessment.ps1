@@ -33,7 +33,7 @@ function Get-FirstRepeatingCharInAString {
         $bar = $foo.ToCharArray()
 
         $hash.Add(0,$bar[0])
-        for ($i = 1; $i -lt $bar.Count; $i++) {
+        for ($i = 1; $i -le $bar.Count; $i++) {
             if ($bar[$i] -in $hash.Values) {
                 $found = $bar[$i]
                 break
@@ -43,7 +43,7 @@ function Get-FirstRepeatingCharInAString {
             }
         }
         if (-not($found)) {
-                $found = "No repeating characters found"
+                $found = "No repeating characters found in $($foo)"
             }
         return $found    
     }
